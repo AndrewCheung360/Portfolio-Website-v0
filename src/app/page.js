@@ -3,8 +3,11 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion'
 import Lenis from 'lenis'
+import { useLenis } from 'lenis/react'
 import LandingPage from '@/Sections/LandingPage';
 import About from '@/Sections/About';
+import ProjectsPage from '@/Sections/ProjectsPage';
+import Footer from '@/Sections/Footer';
 import Image from 'next/image'
 
 
@@ -61,13 +64,18 @@ export default function Home() {
   const background = useTransform(scrollYProgress, [0, 0.4], ['#ffffff00', '#fffcf0'])
 
 
+  function scrollTo(id){
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'})
+  }
+
+
   return (
     <>
     
-      <main ref={container} className = {`relative h-[440vh] xl:h-[450vh]`}>
+      <main ref={container} className = {`relative h-[510vh] xl:h-[520vh]`}>
         
         <motion.div style={{background}} className = "relative w-full h-full">
-            <LandingPage darkMode={darkMode} windowsWidth={windowsWidth} getBlocks={getBlocks} scrollYProgress={scrollYProgress}/>
+            <LandingPage darkMode={darkMode} windowsWidth={windowsWidth} getBlocks={getBlocks} scrollYProgress={scrollYProgress} scrollTo={scrollTo}/>
 
             {/* ABOUT SECTION */}
 
@@ -77,20 +85,11 @@ export default function Home() {
 
 
 
-            <div className = "sticky top-0 h-[130vh] bg-[#fffcf0] px-8">
-              <span className = " text-[8vw] font-bold">
-                PROJECTS
-              </span>
-            </div>
-            <div className = "relative h-[60vh] xl:h-[70vh] bg-black px-8 rounded-t-[30px]">
-              <div className = "w-full flex flex-row justify-center items-center">
-                <span className = " text-[10.5vw]  font-bold text-[#fffcf0]">
-                  {"LET'S CONNECT"}
-                </span>
-                <span className = "text-[#f26e1d] text-[13vw]">+</span>
-              </div>
-              
-            </div>
+            <ProjectsPage/>
+
+            <Footer/>
+
+            
         </motion.div>
         
 
