@@ -31,7 +31,7 @@ export default function Home() {
 
     // Introduce a delay for the color change
     setTimeout(() => {
-      e.target.style.backgroundColor = darkMode ? '#fffcf0' : 'black';
+      e.target.style.backgroundColor = 'black';
     }, 0); // Delay to allow the re-render with new classes
     setTimeout(() => {
       e.target.style.backgroundColor = 'transparent';

@@ -18,7 +18,7 @@ export default function LandingPage({darkMode, windowsWidth, getBlocks, scrollYP
     
 
     return (
-        <motion.div style={{scale, rotate, opacity}} id = "landing" className={`sticky top-0 flex h-screen items-center justify-center ${darkMode ? 'bg-black' : 'bg-[#fffcf0]'}`}>
+        <motion.div style={{scale, rotate, opacity}} id = "landing" className={`sticky top-0 flex h-screen items-center justify-center bg-[#fffcf0]`}>
              <NavBar scrollTo = {scrollTo} />
             
             <div className={`flex flex-col px-14 w-[100%] relative pointer-events-none uppercase mix-blend-difference text-[#fffcf0] z-10`}>

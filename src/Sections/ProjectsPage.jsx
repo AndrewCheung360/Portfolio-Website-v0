@@ -22,10 +22,10 @@ export default function ProjectsPage() {
 
     return (
         <div className={`${openProject ? "relative" : "sticky"} top-0 h-[150vh] bg-[#fffcf0] px-32 flex flex-col gap-y-12 pt-8 xl:py-0`} id = "projects" >
-            <span className="text-[4vw] font-bold">
+            <span className="text-[4vw] text-black font-bold">
                 SELECTED PROJECTS
             </span>
-            <div ref={scope} className="flex flex-col gap-y-12">
+            <div ref={scope} className="flex flex-col gap-y-12 text-black">
                 <div className="flex flex-row w-full justify-between items-center" onClick={() => handleProjectClick("glimpse")}>
                     <span className="text-[2.5vw] font-semibold">
                         Glimpse
