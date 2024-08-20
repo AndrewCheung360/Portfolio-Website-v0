@@ -12,7 +12,7 @@ export default function ExperienceCard() {
 
         </div>
         
-        <div className = "flex flex-col items-center h-full gap-y-10 tall:gap-y-20 3xl:gap-y-16">
+        <div className = "flex flex-col items-center h-full gap-y-10 xl:medium:gap-y-12 2xl:tall:gap-y-20 3xl:gap-y-16">
             <div className = "w-full flex flex-row justify-between items-center text-[#fffcf0] ">
                 <div className = "flex flex-col">
                     <span className = "text-[2vw] font-semibold">
@@ -49,7 +49,7 @@ export default function ExperienceCard() {
 
             <div className = "w-full bg-[#fffcf0] h-[1px]"/>
 
-            <div className = "w-full flex flex-row justify-evenly gap-x-4 xl:gap-x-16 items-center text-[#fffcf0]">
+            <div className = "w-full flex flex-row justify-evenly gap-x-4 xl:gap-x-12 2xl:gap-x-6 items-center text-[#fffcf0]">
                 {/* <span className = "text-[1.5vw] font-medium w-1/2">
                     For more information, check out my resume!
                 </span> */}

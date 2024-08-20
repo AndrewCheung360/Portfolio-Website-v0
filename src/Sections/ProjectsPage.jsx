@@ -78,8 +78,8 @@ export default function ProjectsPage() {
                                 Technologies: React, Next.js, PostgreSQL, Prisma, AWS, TailwindCSS
                             </span>
                             <div className = "flex w-full flex-row justify-evenly items-center">
-                            <Image src="/clubspace-home.png" className = "tall:w-[640px] w-[350px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-home"/>
-                            <Image src="/clubspace-demo.png" className = "tall:w-[640px] w-[350px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-club"/>
+                            <Image src="/clubspace-home.png" className = "tall:w-[640px] w-[350px] xl:medium:w-[500px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-home"/>
+                            <Image src="/clubspace-demo.png" className = "tall:w-[640px] w-[350px] xl:medium:w-[500px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-club"/>
                             </div>
                             
                         </motion.div>}
@@ -107,7 +107,7 @@ export default function ProjectsPage() {
                                 Technologies: Python, Pygame, Tensorflow, OpenCV
                             </span>
                             <div className = "w-full flex flex-row justify-center ">
-                                <video width="800" height="500" muted autoPlay loop className = "2xl:h-[500px] h-[350px] ">
+                                <video width="800" height="500" muted autoPlay loop className = "2xl:h-[500px] h-[350px] xl:medium:h-[400px]">
                                     <source src="/SFDemo.mov" type="video/mp4"/>
                                 </video>
                             </div>
