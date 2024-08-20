@@ -1,9 +1,9 @@
 'use client';
 import { Canvas } from '@react-three/fiber'
 import Model from './Model';
-import { Environment, Lightformer } from '@react-three/drei'
+import { Environment} from '@react-three/drei'
 
-export default function Index() {
+export default function Scene() {
   return (
     <Canvas>
         <spotLight position={[20, 20, 10]} penumbra={1} castShadow angle={0.2} />
