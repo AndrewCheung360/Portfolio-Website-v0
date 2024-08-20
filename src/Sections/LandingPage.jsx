@@ -3,10 +3,11 @@ import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
 import { useTransform, motion } from 'framer-motion'
 import NavBar from '@/components/Navigation/NavBar'
+import Scene from '@/components/Scene'
 
-const Scene = dynamic(() => import('@/components/Scene'), {
-    ssr: false,
-})
+// const Scene = dynamic(() => import('@/components/Scene'), {
+//     ssr: false,
+// })
 
 export default function LandingPage({darkMode, windowsWidth, getBlocks, scrollYProgress, scrollTo}) {
     

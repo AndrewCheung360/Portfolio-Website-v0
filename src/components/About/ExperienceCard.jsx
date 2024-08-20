@@ -12,7 +12,7 @@ export default function ExperienceCard() {
 
         </div>
         
-        <div className = "flex flex-col items-center h-full gap-y-10 tall:gap-y-20">
+        <div className = "flex flex-col items-center h-full gap-y-10 tall:gap-y-20 3xl:gap-y-16">
             <div className = "w-full flex flex-row justify-between items-center text-[#fffcf0] ">
                 <div className = "flex flex-col">
                     <span className = "text-[2vw] font-semibold">
