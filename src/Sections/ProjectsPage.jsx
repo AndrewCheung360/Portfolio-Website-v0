@@ -11,7 +11,7 @@ export default function ProjectsPage() {
         const projects = ["glimpse", "clubspace", "streetfighter"]
         projects.forEach(project => {
             animate(`#${project}`, {
-                height: openProject === project ? "80vh" : "4px"
+                height: openProject === project ? "80vh" : "0px"
             })
         })
     }, [openProject])
@@ -25,95 +25,104 @@ export default function ProjectsPage() {
             <span className="text-[4vw] text-black font-bold">
                 SELECTED PROJECTS
             </span>
-            <div ref={scope} className="flex flex-col gap-y-12 text-black">
-                <div className="flex flex-row w-full justify-between items-center" onClick={() => handleProjectClick("glimpse")}>
-                    <span className="text-[2.5vw] font-semibold">
-                        Glimpse
-                    </span>
-                    <span className="text-[1.75vw]">
-                        2024
-                    </span>
-                </div>
-                <div id="glimpse" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
+            <div ref={scope} className="flex flex-col text-black">
+                <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
                     
-                    <AnimatePresence>
-                    {openProject == "glimpse" && 
-                    <motion.div className="flex flex-col gap-y-4 tall:gap-y-10" initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}>
-                        <span className="text-[1.75vw] font-semibold">
-                            Glimpse is a mobile application that allows users to maintain connections with their friends by forming groups and responding to daily prompts with text, photos, or videos.
+                
+                    <div className="flex flex-row w-full justify-between items-center group-hover:text-[#fffcf0] group-hover:px-4 transition-all ease-out duration-300" onClick={() => handleProjectClick("glimpse")}>
+                        <span className="text-[2.5vw] font-semibold">
+                            Glimpse
                         </span>
-                        <span className="text-[1.25vw]">
-                            Technologies: React Native, Expo, Supabase, AWS
+                        <span className="text-[1.75vw]">
+                            2024
                         </span>
-                        <div className = "flex w-full flex-row justify-evenly items-center">
-                            <Image src="/glimpse-home.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={500} alt="glimpse-home"/>
-                            <Image src="/glimpse-feed.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={100} alt="glimpse-group"/>
-                            <Image src="/glimpse-camera.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={100} alt="glimpse-prompt"/>
-                            <Image src="/glimpse-profile.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={100} alt="glimpse-response"/>
-                        </div>
-                    </motion.div>}
-                    </AnimatePresence>
-                </div>
-
-                <div className="flex flex-row w-full justify-between items-center" onClick={() => handleProjectClick("clubspace")}>
-                    <span className="text-[2.5vw] font-semibold">
-                        Clubspace
-                    </span>
-                    <span className="text-[1.75vw]">
-                        2023
-                    </span>
-                </div>
-                <div id="clubspace" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
-                    <AnimatePresence>
-                        {openProject == "clubspace" && 
-                        <motion.div className="flex flex-col gap-y-12 tall:gap-y-16" initial={{ opacity: 0 }}
+                    </div>
+                    <div id="glimpse" className="w-full bg-[#fffcf0] border-b-[3px] border-black">
+                        
+                        <AnimatePresence>
+                        {openProject == "glimpse" && 
+                        <motion.div className="flex flex-col gap-y-4 tall:gap-y-10" initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}>
                             <span className="text-[1.75vw] font-semibold">
-                                Clubspace is a website that allows students to discover and join clubs at their school, and for club leaders to manage their members and events.
+                                Glimpse is a mobile application that allows users to maintain connections with their friends by forming groups and responding to daily prompts with text, photos, or videos.
                             </span>
                             <span className="text-[1.25vw]">
-                                Technologies: React, Next.js, PostgreSQL, Prisma, AWS, TailwindCSS
+                                Technologies: React Native, Expo, Supabase, AWS
                             </span>
                             <div className = "flex w-full flex-row justify-evenly items-center">
-                            <Image src="/clubspace-home.png" className = "tall:w-[640px] w-[350px] xl:medium:w-[500px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-home"/>
-                            <Image src="/clubspace-demo.png" className = "tall:w-[640px] w-[350px] xl:medium:w-[500px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-club"/>
+                                <Image src="/glimpse-home.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={500} alt="glimpse-home"/>
+                                <Image src="/glimpse-feed.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={100} alt="glimpse-group"/>
+                                <Image src="/glimpse-camera.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={100} alt="glimpse-prompt"/>
+                                <Image src="/glimpse-profile.png" className = "2xl:h-[500px] h-[420px] rounded-3xl border-2" width={250} height={100} alt="glimpse-response"/>
                             </div>
-                            
                         </motion.div>}
-                    </AnimatePresence>
+                        </AnimatePresence>
+                    </div>
                 </div>
 
-                <div className="flex flex-row w-full justify-between items-center" onClick={() => handleProjectClick("streetfighter")}>
-                    <span className="text-[2.5vw] font-semibold">
-                        Street Fighter II - Motion
-                    </span>
-                    <span className="text-[1.75vw]">
-                        2023
-                    </span>
+
+                <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
+                    <div className="flex flex-row w-full justify-between items-center group-hover:text-[#fffcf0] group-hover:px-4 transition-all ease-out duration-300 " onClick={() => handleProjectClick("clubspace")}>
+                        <span className="text-[2.5vw] font-semibold">
+                            Clubspace
+                        </span>
+                        <span className="text-[1.75vw]">
+                            2023
+                        </span>
+                    </div>
+                    <div id="clubspace" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
+                        <AnimatePresence>
+                            {openProject == "clubspace" && 
+                            <motion.div className="flex flex-col gap-y-12 tall:gap-y-16" initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}>
+                                <span className="text-[1.75vw] font-semibold">
+                                    Clubspace is a website that allows students to discover and join clubs at their school, and for club leaders to manage their members and events.
+                                </span>
+                                <span className="text-[1.25vw]">
+                                    Technologies: React, Next.js, PostgreSQL, Prisma, AWS, TailwindCSS
+                                </span>
+                                <div className = "flex w-full flex-row justify-evenly items-center">
+                                <Image src="/clubspace-home.png" className = "tall:w-[640px] w-[350px] xl:medium:w-[500px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-home"/>
+                                <Image src="/clubspace-demo.png" className = "tall:w-[640px] w-[350px] xl:medium:w-[500px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-club"/>
+                                </div>
+                                
+                            </motion.div>}
+                        </AnimatePresence>
+                    </div>
                 </div>
-                <div id="streetfighter" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
-                    <AnimatePresence>
-                        {openProject == "streetfighter" && 
-                        <motion.div className="flex flex-col gap-y-6 tall:gap-y-10" initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}>
-                            <span className="text-[1.75vw] font-semibold">
-                                Street Fighter II - Motion is a motion-controlled recreation of the classic game Street Fighter II, where players can fight against each other using their body movements.
-                            </span>
-                            <span className="text-[1.25vw]">
-                                Technologies: Python, Pygame, Tensorflow, OpenCV
-                            </span>
-                            <div className = "w-full flex flex-row justify-center ">
-                                <video width="800" height="500" muted autoPlay loop className = "2xl:h-[500px] h-[350px] xl:medium:h-[400px]">
-                                    <source src="/SFDemo.mov" type="video/mp4"/>
-                                </video>
-                            </div>
-                            
-                        </motion.div>}
-                    </AnimatePresence>
+
+                <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
+                    <div className="flex flex-row w-full justify-between items-center group-hover:text-[#fffcf0] group-hover:px-4 transition-all ease-out duration-300" onClick={() => handleProjectClick("streetfighter")}>
+                        <span className="text-[2.5vw] font-semibold">
+                            Street Fighter II - Motion
+                        </span>
+                        <span className="text-[1.75vw]">
+                            2023
+                        </span>
+                    </div>
+                    <div id="streetfighter" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
+                        <AnimatePresence>
+                            {openProject == "streetfighter" && 
+                            <motion.div className="flex flex-col gap-y-6 tall:gap-y-10" initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}>
+                                <span className="text-[1.75vw] font-semibold">
+                                    Street Fighter II - Motion is a motion-controlled recreation of the classic game Street Fighter II, where players can fight against each other using their body movements.
+                                </span>
+                                <span className="text-[1.25vw]">
+                                    Technologies: Python, Pygame, Tensorflow, OpenCV
+                                </span>
+                                <div className = "w-full flex flex-row justify-center ">
+                                    <video width="800" height="500" muted autoPlay loop className = "2xl:h-[500px] h-[350px] xl:medium:h-[400px]">
+                                        <source src="/SFDemo.mov" type="video/mp4"/>
+                                    </video>
+                                </div>
+                                
+                            </motion.div>}
+                        </AnimatePresence>
+                    </div>
                 </div>
             </div>
         </div>
