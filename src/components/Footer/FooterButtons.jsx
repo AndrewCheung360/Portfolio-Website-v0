@@ -49,7 +49,7 @@ export default function FooterButtons() {
             </MagneticFramer>
 
             <MagneticFramer>
-                <a href = "https://drive.google.com/file/d/1yb84sk_dt_6DAONUPdja9TVjt2qMLZMN/view?usp=sharing" target="blank"  className = "group relative bg-[#fffcf0] rounded-[36px] py-4 flex justify-center gap-x-3 items-center px-6 cursor-pointer overflow-hidden w-44">
+                <a href = "https://drive.google.com/file/d/1RF_0_-clvubnjwPUthkd15d6rbrhh78y/view?usp=sharing" target="blank"  className = "group relative bg-[#fffcf0] rounded-[36px] py-4 flex justify-center gap-x-3 items-center px-6 cursor-pointer overflow-hidden w-44">
                     <div className = "bg-black rounded-full w-2 h-2 group-hover:scale-[4000%] group-hover:bg-[#f26e1d] transition-all duration-300 ease-out"/>
                     <span className = " text-[1vw] font-medium z-20 group-hover:-translate-x-6 group-hover:text-[#fffcf0] transition-all duration-300 ease-out">
                         RESUME

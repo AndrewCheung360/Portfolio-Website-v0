@@ -10,7 +10,7 @@ export default function About({scrollYProgress}) {
 
     return (
         <div className = "relative h-[200vh] w-full" id = "about">
-            <motion.div style={{scale, rotate}} className = {`top-0 relative h-[200vh] rounded-[30px] w-full bg-black flex flex-row px-8 py-8 -space-x-20 xl:-space-x-32 2xl:-space-x-40`}>
+            <motion.div style={{scale, rotate}} className = {`top-0 relative h-[200vh] rounded-[30px] w-full bg-black flex flex-row px-8 pt-16 pb-16 -space-x-20 xl:-space-x-32 2xl:-space-x-40`}>
                 <div className = "flex flex-col items-center w-full">
                     <span className = "text-[#FFFCF0] text-[9vw] font-bold">
                         ABOUT

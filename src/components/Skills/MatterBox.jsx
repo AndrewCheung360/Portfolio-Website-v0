@@ -4,28 +4,28 @@ import Matter from "matter-js";
 
 export default function MixedShapes() {
   const sceneRef = useRef(null);
-  const textCanvasRef = useRef(null);
 
   useEffect(() => {
-    const { Engine, Render, Runner, Common, MouseConstraint, Mouse, Composite, Bodies } = Matter;
+    const { Engine, Render, Runner, Composite, Common, MouseConstraint, Mouse, Bodies, Events } = Matter;
 
     // Create engine
     const engine = Engine.create();
     const world = engine.world;
 
-    // Canvas dimensions
-    const canvasWidth = 550;
-    const canvasHeight = 500;
+    // Get container dimensions
+    const containerWidth = sceneRef.current.clientWidth;
+    const containerHeight = sceneRef.current.clientHeight;
 
-    // Create renderer with canvas dimensions
+    // Create renderer with dynamic canvas size
     const render = Render.create({
       element: sceneRef.current,
       engine: engine,
       options: {
-        width: canvasWidth,
-        height: canvasHeight,
-        background: "#101010",
+        width: containerWidth,
+        height: containerHeight,
+        background: "transparent",
         wireframes: false,
+        wireframeBackground: "transparent",
       },
     });
 
@@ -35,34 +35,50 @@ export default function MixedShapes() {
     const runner = Runner.create();
     Runner.run(runner, engine);
 
-    // Define skills and colors
-    const skills = ["Python", "Java", "Kotlin", "React", "JavaScript", "React Native", "TypeScript", "Supabase", "AWS", "GCP", "Expo", "Next.js", "Firebase", "TensorFlow", "HTML", "CSS", "JUnit", "Pytest"];
+    // List of skills
+    const skills = ['Python', 'Java', 'Javascript', 'Kotlin', 'Typescript', 'React', 'React Native', 'HTML', 'CSS', 'Firebase', 'Supabase', 'AWS', 'Expo', 'TensorFlow', 'Pytest', 'JUnit'];
+
+    // Predefined set of colors
     const colors = ["#F26E1D", "#0ae448", "#1DA1F2", "#fd5c63"];
 
-    // Add bodies with skills
-    const bodies = skills.map((skill, index) => {
-      const x = 100 + (Math.floor(Math.random() * 4)) * 120; // Adjust x position
-      const y = 100 + Math.floor(Math.random() * 4) * 100; // Adjust y position
+    // Add bodies with text
+    skills.forEach((skill, index) => {
+      const x = Math.random() * containerWidth;
+      const y = Math.random() * containerHeight;
+      const radius = Math.min(containerWidth, containerHeight) * Common.random(0.075, 0.1); // Scale radius based on canvas size
+      const color = colors[index % colors.length];
+      
+      let body = Bodies.circle(x, y, radius, { render: { fillStyle: color } });
 
-      let body = Bodies.circle(x, y, 45, {
-        render: {
-          fillStyle: colors[index % colors.length]
-        }
+      Composite.add(world, body);
+
+      // Add text
+      const textElement = document.createElement('div');
+      textElement.style.position = 'absolute';
+      textElement.style.left = `${x}px`;
+      textElement.style.top = `${y}px`;
+      textElement.style.color = '#fffcf0';
+      textElement.style.fontFamily = 'Inter, sans-serif';
+      textElement.style.fontWeight = 'bold';
+      textElement.style.fontSize = `${radius * 0.25}px`; // Scale text size based on shape size
+      textElement.style.pointerEvents = 'none'; // Make sure the text does not interfere with mouse interactions
+      textElement.textContent = skill;
+      sceneRef.current.appendChild(textElement);
+
+      // Update text position when body moves
+      Events.on(engine, 'afterUpdate', () => {
+        const position = body.position;
+        textElement.style.left = `${position.x - textElement.offsetWidth / 2}px`; // Center text horizontally
+        textElement.style.top = `${position.y - textElement.offsetHeight / 2}px`; // Center text vertically
       });
-
-      // Add text to the body
-      body.text = skill;
-      return body;
     });
 
-    Composite.add(world, bodies);
-
+    // Add walls with dynamic coordinates
     Composite.add(world, [
-      // Walls with invisible render
-      Bodies.rectangle(canvasWidth / 2, 0, canvasWidth, 5, { isStatic: true, render: { visible: false } }),
-      Bodies.rectangle(canvasWidth / 2, canvasHeight, canvasWidth, 5, { isStatic: true, render: { visible: false } }),
-      Bodies.rectangle(canvasWidth, canvasHeight / 2, 5, canvasHeight, { isStatic: true, render: { visible: false } }),
-      Bodies.rectangle(0, canvasHeight / 2, 5, canvasHeight, { isStatic: true, render: { visible: false } }),
+      Bodies.rectangle(containerWidth / 2, -2.5, containerWidth, 1, { isStatic: true, render: { visible: false } }), // Top wall
+      Bodies.rectangle(containerWidth / 2, containerHeight + 2.5, containerWidth, 1, { isStatic: true, render: { visible: false } }), // Bottom wall
+      Bodies.rectangle(containerWidth + 2.5, containerHeight / 2, 5, containerHeight, { isStatic: true, render: { visible: false } }), // Right wall
+      Bodies.rectangle(-2.5, containerHeight / 2, 5, containerHeight, { isStatic: true, render: { visible: false } }), // Left wall
     ]);
 
     // Add mouse control
@@ -85,47 +101,31 @@ export default function MixedShapes() {
     // Fit the render viewport to the scene
     Render.lookAt(render, {
       min: { x: 0, y: 0 },
-      max: { x: canvasWidth, y: canvasHeight },
+      max: { x: containerWidth, y: containerHeight },
     });
 
-    // Create a separate canvas for text
-    const textCanvas = document.createElement("canvas");
-    textCanvas.width = canvasWidth;
-    textCanvas.height = canvasHeight;
-    textCanvas.style.position = "absolute";
-    textCanvas.style.top = "0";
-    textCanvas.style.left = "0";
-    textCanvas.style.pointerEvents = "none";
-    sceneRef.current.appendChild(textCanvas);
-    textCanvasRef.current = textCanvas;
+    // Handle window resize
+    const handleResize = () => {
+      const newWidth = sceneRef.current.clientWidth;
+      const newHeight = sceneRef.current.clientHeight;
 
-    const textContext = textCanvas.getContext("2d");
-    textContext.font = 'bold 14px Sans-serif';
-    textContext.textAlign = 'center';
-    textContext.textBaseline = 'middle';
-    textContext.fillStyle = '#FFFCF0'; // Set text color
+      Render.setPixelRatio(render, window.devicePixelRatio);
+      render.options.width = newWidth;
+      render.options.height = newHeight;
+      render.canvas.width = newWidth;
+      render.canvas.height = newHeight;
 
-    function drawText() {
-      const bodies = Composite.allBodies(world);
-      textContext.clearRect(0, 0, canvasWidth, canvasHeight); // Clear only text layer
+      // Adjust walls to new dimensions
+      Composite.clear(world, false, true); // Clear only the walls
+      Composite.add(world, [
+        Bodies.rectangle(newWidth / 2, -2.5, newWidth, 1, { isStatic: true, render: { visible: false } }),
+        Bodies.rectangle(newWidth / 2, newHeight + 2.5, newWidth, 1, { isStatic: true, render: { visible: false } }),
+        Bodies.rectangle(newWidth + 2.5, newHeight / 2, 5, newHeight, { isStatic: true, render: { visible: false } }),
+        Bodies.rectangle(-2.5, newHeight / 2, 5, newHeight, { isStatic: true, render: { visible: false } }),
+      ]);
+    };
 
-      bodies.forEach(body => {
-        if (body.text) {
-          const { position } = body;
-          const scale = render.options.width / canvasWidth;
-          // Adjust for Matter.js coordinate system
-          const x = position.x;
-          const y = position.y;
-          textContext.fillText(body.text, x, y);
-        }
-      });
-    }
-
-    // Redraw text after each update
-    Matter.Events.on(engine, 'afterUpdate', drawText);
-
-    // Initial draw
-    drawText();
+    window.addEventListener('resize', handleResize);
 
     return () => {
       Matter.Render.stop(render);
@@ -134,12 +134,14 @@ export default function MixedShapes() {
       Matter.Engine.clear(engine);
       render.canvas.remove();
       render.textures = {};
-      Matter.Events.off(engine, 'afterUpdate', drawText);
-      if (textCanvasRef.current) {
-        textCanvasRef.current.remove();
-      }
+      window.removeEventListener('resize', handleResize);
+      // Clean up text elements
+      const currentRef = sceneRef.current;
+      if (!currentRef) return;
+      const textElements = currentRef.querySelectorAll('div');
+      textElements.forEach(el => el.remove());
     };
   }, []);
 
-  return <div ref={sceneRef} />;
+  return <div ref={sceneRef} style={{ position: 'relative', width: '100%', height: '100%' }} />;
 }

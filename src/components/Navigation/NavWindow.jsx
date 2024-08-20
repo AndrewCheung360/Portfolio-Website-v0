@@ -24,7 +24,7 @@ export default function NavWindow({scrollTo}) {
         },
         {
             title: "Resume",
-            href: "https://drive.google.com/file/d/1yb84sk_dt_6DAONUPdja9TVjt2qMLZMN/view?usp=sharing"
+            href: "https://drive.google.com/file/d/1RF_0_-clvubnjwPUthkd15d6rbrhh78y/view?usp=sharing"
         }
     ]
     
