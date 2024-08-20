@@ -141,7 +141,7 @@ export default function MixedShapes() {
       const textElements = currentRef.querySelectorAll('div');
       textElements.forEach(el => el.remove());
     };
-  }, []);
+  }, [ sceneRef ]);
 
   return <div ref={sceneRef} style={{ position: 'relative', width: '100%', height: '100%' }} />;
 }

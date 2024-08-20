@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <>
     
-      <main ref={container} className = {`relative h-[510vh] xl:h-[520vh]`}>
+      <main ref={container} className = {`h-[520vh]`}>
         
         <motion.div style={{background}} className = "relative w-full h-full">
             <LandingPage darkMode={darkMode} windowsWidth={windowsWidth} getBlocks={getBlocks} scrollYProgress={scrollYProgress} scrollTo={scrollTo}/>

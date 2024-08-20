@@ -49,7 +49,7 @@ export default function ExperienceCard() {
 
             <div className = "w-full bg-[#fffcf0] h-[1px]"/>
 
-            <div className = "w-full flex flex-row justify-evenly xl:gap-x-16 items-center text-[#fffcf0]">
+            <div className = "w-full flex flex-row justify-evenly gap-x-4 xl:gap-x-16 items-center text-[#fffcf0]">
                 {/* <span className = "text-[1.5vw] font-medium w-1/2">
                     For more information, check out my resume!
                 </span> */}
