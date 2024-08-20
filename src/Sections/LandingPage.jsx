@@ -2,7 +2,6 @@
 import React, {useState, useEffect} from 'react'
 import dynamic from 'next/dynamic'
 import { useTransform, motion } from 'framer-motion'
-import LandingMenu from '@/components/Navigation/LandingMenu'
 import NavBar from '@/components/Navigation/NavBar'
 
 const Scene = dynamic(() => import('@/components/Scene'), {

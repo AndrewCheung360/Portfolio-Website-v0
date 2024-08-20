@@ -3,13 +3,10 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion'
 import Lenis from 'lenis'
-import { useLenis } from 'lenis/react'
 import LandingPage from '@/Sections/LandingPage';
-import About from '@/Sections/About';
 import About2 from '@/Sections/About2';
 import ProjectsPage from '@/Sections/ProjectsPage';
 import Footer from '@/Sections/Footer';
-import Image from 'next/image'
 
 
 export default function Home() {

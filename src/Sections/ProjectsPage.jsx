@@ -78,8 +78,8 @@ export default function ProjectsPage() {
                                 Technologies: React, Next.js, PostgreSQL, Prisma, AWS, TailwindCSS
                             </span>
                             <div className = "flex w-full flex-row justify-evenly items-center">
-                            <Image src="/clubspace-home.png" className = "tall:w-[640px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-home"/>
-                            <Image src="/clubspace-demo.png" className = "tall:w-[640px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-club"/>
+                            <Image src="/clubspace-home.png" className = "tall:w-[640px] w-[350px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-home"/>
+                            <Image src="/clubspace-demo.png" className = "tall:w-[640px] w-[350px] 2xl:w-[640px] border-2" width={500} height={300} alt="clubspace-club"/>
                             </div>
                             
                         </motion.div>}
