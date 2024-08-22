@@ -5,7 +5,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { useControls } from 'leva'
 import * as THREE from 'three';
 
-export default function Model() {
+export default function Model({isMobile}) {
     // const { nodes } = useGLTF("/models/torrus.glb");
     const { viewport, gl } = useThree()
     const torus = useRef();
@@ -54,7 +54,7 @@ export default function Model() {
 
     const Torus = memo(TorusComponent)
     return (
-        <mesh ref={torus} scale = {viewport.width / 30} rotation={[Math.PI / 6, Math.PI / 6, 0]}>
+        <mesh ref={torus} scale = {isMobile ? (viewport.width / 15):(viewport.width / 30)} rotation={[Math.PI / 6, Math.PI / 6, 0]}>
             <Torus />
         </mesh>
     )

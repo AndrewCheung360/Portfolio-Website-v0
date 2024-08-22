@@ -2,8 +2,55 @@
 import React from 'react'
 import LinkButton from './LinkButton'
 
-export default function ExperienceCard() {
+export default function ExperienceCard({isMobile}) {
     return(
+        <>
+        {isMobile ?
+        <div className = "w-full h-1/5 rounded-3xl bg-[#101010] flex flex-col items-center py-6 gap-y-8 ring-1 ring-[#fffcf0]">
+            <span className = "text-[#FFFCF0] text-[11vw] font-semibold">
+                    EXPERIENCES
+            </span>
+            <div className = "w-full flex flex-col items-center gap-y-6">
+                <div className = "w-[90%] flex flex-row justify-between items-center text-[#fffcf0] ">
+                    <div className = "flex flex-col">
+                        <span className = "text-[5vw] font-semibold">
+                            Zebra Technologies
+                        </span>
+                        <span className = "text-[3vw]">
+                            Software Engineering Intern
+                        </span>
+                    </div>
+                    <div>
+                        <span className = " text-[3vw] font-semibold">
+                            2024
+                        </span>
+                    </div>
+                </div>
+
+                <div className = "w-[90%] bg-[#fffcf0] h-[1px]"/>
+
+                <div className = "w-[90%] flex flex-row justify-between items-center text-[#fffcf0] ">
+                    <div className = "flex flex-col">
+                        <span className = "text-[5vw] font-semibold">
+                            Cornell University
+                        </span>
+                        <span className = "text-[3vw]">
+                            BA in CS, Minor in AI
+                        </span>
+                    </div>
+                    <div>
+                        <span className = " text-[3vw] font-semibold">
+                            2022 - Now
+                        </span>
+                    </div>
+                </div>
+
+                <div className = "w-[90%] bg-[#fffcf0] h-[1px]"/>
+
+
+            </div>
+        </div>
+        :
         <div className = "w-[45%] h-full rounded-3xl bg-[#101010] px-10 py-8 flex flex-col gap-y-8 2xl:gap-y-12 ring-1 ring-[#fffcf0]">
         <div className = "w-full">
             <span className = "text-[#FFFCF0] text-[4vw] font-semibold">
@@ -59,6 +106,10 @@ export default function ExperienceCard() {
             </div>
 
             </div>
-    </div>
+        </div>
+        
+        }
+        </>
+        
     )
 }

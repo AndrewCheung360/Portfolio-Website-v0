@@ -12,6 +12,7 @@ import Footer from '@/Sections/Footer';
 export default function Home() {
   const [windowsWidth, setWindowsWidth] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const getBlocks = () => {
     const blockSize = windowsWidth * 0.005;
@@ -54,6 +55,7 @@ export default function Home() {
 
     setWindowsWidth(window.innerWidth);
     setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setIsMobile(window.innerWidth < 768);
 
     requestAnimationFrame(raf)
 
@@ -70,15 +72,16 @@ export default function Home() {
   return (
     <>
     
-      <main ref={container} className = {`h-[520vh]`}>
+      <main ref={container} className = {`h-[475h] sm:h-[520vh]`}>
         
         <motion.div style={{background}} className = "relative w-full h-full">
-            <LandingPage darkMode={darkMode} windowsWidth={windowsWidth} getBlocks={getBlocks} scrollYProgress={scrollYProgress} scrollTo={scrollTo}/>
+            <LandingPage isMobile={isMobile} windowsWidth={windowsWidth} getBlocks={getBlocks} scrollYProgress={scrollYProgress} scrollTo={scrollTo}/>
 
-            {/* ABOUT SECTION */}
+            <About2 scrollYProgress={scrollYProgress} isMobile={isMobile}/>
 
-              {/* <About scrollYProgress={scrollYProgress}/> */}
-              <About2 scrollYProgress={scrollYProgress}/>
+            <ProjectsPage isMobile={isMobile}/>
+            <Footer isMobile={isMobile}/>
+              {/* <About2 scrollYProgress={scrollYProgress}/>
 
 
 
@@ -86,7 +89,7 @@ export default function Home() {
 
             <ProjectsPage/>
 
-            <Footer/>
+            <Footer/> */}
 
             
         </motion.div>

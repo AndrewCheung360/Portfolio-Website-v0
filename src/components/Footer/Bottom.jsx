@@ -11,13 +11,13 @@ export default function Bottom(){
       };
     return(
         <div className = "flex flex-row items-end justify-between w-full pr-8">
-            <span className = "text-[#fffcf0] text-[2vw] font-semibold">
+            <span className = "text-[#fffcf0] text-[4vw] sm:text-[2vw] font-semibold">
                 {"©2024 ANDREW CHEUNG"}
             </span>
             <MagneticFramer>
                     <svg
                         viewBox="0 0 16 16"
-                        className = "w-[5vw] fill-[#fffcf0] hover:fill-[#f26e1d] cursor-pointer"
+                        className = "w-[10vw] sm:w-[5vw] fill-[#fffcf0] hover:fill-[#f26e1d] cursor-pointer"
                         style = {{
                             transition: 'fill 0.3s'
                         }}
