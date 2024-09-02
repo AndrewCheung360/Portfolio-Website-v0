@@ -100,7 +100,7 @@ export default function ExperienceCard({isMobile}) {
                 {/* <span className = "text-[1.5vw] font-medium w-1/2">
                     For more information, check out my resume!
                 </span> */}
-                <LinkButton text = "RESUME" href = "https://drive.google.com/file/d/1tz16PrL9hJmsSVxdgvkFWpJE0iW4iuFb/view?usp=sharing"/>
+                <LinkButton text = "RESUME" href = "https://drive.google.com/file/d/1i4_e0rPOXiEjo1hd_iooSgE_2jK3GmvY/view?usp=sharing"/>
                 <LinkButton text = "LINKEDIN" href = "https://www.linkedin.com/in/andrewcheung360/"/>
                 <LinkButton text = "GITHUB" href = "https://github.com/AndrewCheung360"/>
             </div>
