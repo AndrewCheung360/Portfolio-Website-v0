@@ -6,6 +6,7 @@ export default function MixedShapes() {
   const sceneRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const { Engine, Render, Runner, Composite, Common, MouseConstraint, Mouse, Bodies, Events } = Matter;
 
     // Create engine
