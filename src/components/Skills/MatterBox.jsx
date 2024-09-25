@@ -138,9 +138,13 @@ export default function MixedShapes() {
       window.removeEventListener('resize', handleResize);
       // Clean up text elements
       const currentRef = sceneRef.current;
-      if (!currentRef) return;
-      const textElements = currentRef.querySelectorAll('div');
-      textElements.forEach(el => el.remove());
+      // if (!currentRef) return;
+      // const textElements = currentRef.querySelectorAll('div');
+      // textElements.forEach(el => el.remove());
+      if (currentRef) {
+        const textElements = currentRef.querySelectorAll('div');
+        textElements.forEach(el => el.remove());
+      }
     };
   }, [ sceneRef]);
 
