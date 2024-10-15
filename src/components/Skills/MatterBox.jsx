@@ -37,7 +37,7 @@ export default function MixedShapes() {
     Runner.run(runner, engine);
 
     // List of skills
-    const skills = ['Python', 'Java', 'Javascript', 'Kotlin', 'Typescript', 'React', 'React Native', 'HTML', 'CSS', 'Firebase', 'Supabase', 'AWS', 'Expo', 'TensorFlow', 'Pytest', 'JUnit'];
+    const skills = ['Python', 'Java', 'JavaScript', 'Kotlin', 'TypeScript', 'React', 'React Native', 'HTML', 'CSS', 'Firebase', 'Supabase', 'AWS', 'Expo', 'PostgreSQL', 'Node.js', 'Next.js', 'MongoDB', 'GCP'];
 
     // Predefined set of colors
     const colors = ["#F26E1D", "#0ae448", "#1DA1F2", "#fd5c63"];

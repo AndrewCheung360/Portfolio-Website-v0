@@ -10,7 +10,7 @@ export default function ProjectsPage({isMobile}) {
     const projectHeight = isMobile ? "60vh" : "80vh"
 
     useEffect(() => {
-        const projects = ["glimpse", "clubspace", "streetfighter"]
+        const projects = ["divvyai", "glimpse", "clubspace", "streetfighter"]
         projects.forEach(project => {
             animate(`#${project}`, {
                 height: openProject === project ? projectHeight : "0px"
@@ -30,6 +30,38 @@ export default function ProjectsPage({isMobile}) {
                     PROJECTS
                 </span>
                 <div ref={scope} className="flex flex-col text-black w-full px-8">
+                <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
+                        <div className="flex flex-row w-full justify-between items-center group-hover:text-[#fffcf0] group-hover:px-4 transition-all ease-out duration-300 " onClick={() => handleProjectClick("divvyai")}>
+                            <span className="text-[5vw] font-semibold">
+                                DivvyAI
+                            </span>
+                            <span className="text-[3vw]">
+                                2024
+                            </span>
+                        </div>
+                        <div id="divvyai" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
+                            <AnimatePresence>
+                                {openProject == "divvyai" && 
+                                <motion.div className="flex flex-col gap-y-4" initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}>
+                                    <span className="text-[3.25vw] font-semibold">
+                                        DivvyAI is an AI powered calendar web app that automates task division and scheduling for students.
+                                    </span>
+                                    <span className="text-[3vw]">
+                                        Technologies: React, Next.js, TypeScript, Supabase, GCP, OpenAI, Pinata, Clerk
+                                    </span>
+                                    <a className="text-[3vw]" target = "blank" href = "https://github.com/AndrewCheung360/DivvyAI">
+                                        Github: https://github.com/AndrewCheung360/DivvyAI
+                                    </a>
+                                    <div className = "flex w-full flex-row justify-evenly items-center">
+                                    <Image src="/divvyai.png" className = " h-[250px] w-[500px] border-2" width={1920} height={1080} alt="divvyai"/>
+                                    </div>
+                                    
+                                </motion.div>}
+                            </AnimatePresence>
+                        </div>
+                    </div>
                     <div className = "group pt-3 w-full flex flex-col gap-y-3 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
                         
                     
@@ -137,6 +169,38 @@ export default function ProjectsPage({isMobile}) {
                     SELECTED PROJECTS
                 </span>
                 <div ref={scope} className="flex flex-col text-black">
+                    <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
+                        <div className="flex flex-row w-full justify-between items-center group-hover:text-[#fffcf0] group-hover:px-4 transition-all ease-out duration-300 " onClick={() => handleProjectClick("divvyai")}>
+                            <span className="text-[2.5vw] font-semibold">
+                                DivvyAI
+                            </span>
+                            <span className="text-[1.75vw]">
+                                2024
+                            </span>
+                        </div>
+                        <div id="divvyai" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
+                            <AnimatePresence>
+                                {openProject == "divvyai" && 
+                                <motion.div className="flex flex-col gap-y-4" initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}>
+                                    <span className="text-[1.75vw] font-semibold">
+                                        DivvyAI is an AI powered calendar web app that automates task division and scheduling for students.
+                                    </span>
+                                    <span className="text-[1.25vw]">
+                                        Technologies: React, Next.js, TypeScript, Supabase, GCP, OpenAI, Pinata, Clerk
+                                    </span>
+                                    <a className="text-[1.25vw]" target = "blank" href = "https://github.com/AndrewCheung360/DivvyAI">
+                                        Github: https://github.com/AndrewCheung360/DivvyAI
+                                    </a>
+                                    <div className = "flex w-full flex-row justify-evenly items-center">
+                                    <Image src="/divvyai.png" className = " h-[480px] w-[1020px] border-2" width={1920} height={1080} alt="divvyai"/>
+                                    </div>
+                                    
+                                </motion.div>}
+                            </AnimatePresence>
+                        </div>
+                    </div>
                     <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
                         
                     

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-
+import { resume } from '../../../constants/Resume'
 
 export default function NavWindow({scrollTo}) {
 
@@ -24,7 +24,7 @@ export default function NavWindow({scrollTo}) {
         },
         {
             title: "Resume",
-            href: "https://drive.google.com/file/d/1i4_e0rPOXiEjo1hd_iooSgE_2jK3GmvY/view?usp=sharing"
+            href: resume
         }
     ]
     
