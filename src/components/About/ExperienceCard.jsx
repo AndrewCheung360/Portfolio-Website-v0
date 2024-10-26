@@ -66,7 +66,7 @@ export default function ExperienceCard({isMobile}) {
             </div>
         </div>
         :
-        <div className = "w-[45%] h-full rounded-3xl bg-[#101010] px-10 py-8 flex flex-col gap-y-8 2xl:gap-y-12 ring-1 ring-[#fffcf0]">
+        <div className = "w-[45%] h-full rounded-3xl bg-[#101010] px-10 py-8 flex flex-col gap-y-2 ring-1 ring-[#fffcf0]">
         <div className = "w-full">
             <span className = "text-[#FFFCF0] text-[4vw] font-semibold">
                     EXPERIENCES
@@ -74,7 +74,7 @@ export default function ExperienceCard({isMobile}) {
 
         </div>
         
-        <div className = "flex flex-col items-center h-full gap-y-10 xl:medium:gap-y-12 2xl:tall:gap-y-20 3xl:gap-y-16">
+        <div className = "flex flex-col items-center h-full gap-y-6">
             <div className = "w-full flex flex-row justify-between items-center text-[#fffcf0] ">
                 <div className = "flex flex-col">
                     <span className = "text-[2vw] font-semibold">
@@ -108,6 +108,23 @@ export default function ExperienceCard({isMobile}) {
             </div>
 
             <div className = "w-full bg-[#fffcf0] h-[1px]"/>
+            <div className = "w-full flex flex-row justify-between items-center text-[#fffcf0]">
+                <div className = "flex flex-col ">
+                    <span className = "text-[2vw] font-semibold">
+                        Cornell WebDev
+                    </span>
+                    <span className = "text-[1.25vw]">
+                        Full-Stack Developer
+                    </span>
+                </div>
+                <div>
+                    <span className = " text-[1.5vw] font-semibold">
+                        2023
+                    </span>
+                </div>
+                
+            </div>
+            <div className = "w-full bg-[#fffcf0] h-[1px]"/>
 
             <div className = "w-full flex flex-row justify-between items-center text-[#fffcf0]">
                 <div className = "flex flex-col ">
@@ -123,7 +140,9 @@ export default function ExperienceCard({isMobile}) {
                         2022 - Now
                     </span>
                 </div>
+                
             </div>
+
 
             {/* <div className = "w-full bg-[#fffcf0] h-[1px]"/> */}
 

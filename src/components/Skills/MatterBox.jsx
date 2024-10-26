@@ -120,7 +120,7 @@ export default function MixedShapes() {
       Composite.clear(world, false, true); // Clear only the walls
       Composite.add(world, [
         Bodies.rectangle(newWidth / 2, -2.5, newWidth, 1, { isStatic: true, render: { visible: false } }),
-        Bodies.rectangle(newWidth / 2, newHeight + 2.5, newWidth, 1, { isStatic: true, render: { visible: false } }),
+        Bodies.rectangle(newWidth / 2, newHeight + 3, newWidth, 1, { isStatic: true, render: { visible: false } }),
         Bodies.rectangle(newWidth + 2.5, newHeight / 2, 5, newHeight, { isStatic: true, render: { visible: false } }),
         Bodies.rectangle(-2.5, newHeight / 2, 5, newHeight, { isStatic: true, render: { visible: false } }),
       ]);

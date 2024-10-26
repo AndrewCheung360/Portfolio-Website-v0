@@ -45,7 +45,7 @@ export default function About2({scrollYProgress, isMobile}) {
         :
 
         <div className = "relative h-[200vh] w-full" id = "about">
-            <motion.div style={{scale, rotate}} className = {`top-0 relative h-[200vh] rounded-[30px] w-full bg-black flex flex-col items-center px-16 py-8 2xl:py-16 gap-y-52 xl:gap-y-72 2xl:tall:gap-y-48 medium:2xl:gap-y-64`}>
+            <motion.div style={{scale, rotate}} className = {`top-0 relative h-[200vh] rounded-[30px] w-full bg-black flex flex-col items-center px-16 py-6 gap-y-52 xl:gap-y-72 2xl:tall:gap-y-48 medium:2xl:gap-y-64`}>
                 <div className = "w-full h-2/5 flex flex-row justify-center gap-x-32 items-center">
                     <div className = "flex flex-col items-center h-full gap-y-6">
                         <span className = "text-[#FFFCF0] text-[7vw] font-bold">
@@ -63,7 +63,7 @@ export default function About2({scrollYProgress, isMobile}) {
                         </span>
                     </div>
                 </div>
-                <div className = "flex flex-row w-full h-2/5 justify-center gap-x-28 ">
+                <div className = "flex flex-row w-full h-[40%] 2xl:h-[42%] justify-center gap-x-28 ">
 
                     <ExperienceCard isMobile = {isMobile}/>
 
