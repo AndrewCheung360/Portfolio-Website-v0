@@ -23,7 +23,7 @@ export default function About2({scrollYProgress, isMobile}) {
                 </div>
                 <div className = "flex flex-col items-center gap-y-4 w-[90%]">
                     <span className = " text-[#fffcf0] font-medium text-[5vw]">
-                        As a <span className="font-bold text-[#f26e1d]">software engineer</span> and computer science student at <span className="font-bold text-[#f26e1d]">Cornell University</span> specializing in <span className="font-bold text-[#f26e1d]">AI</span>{", I'm passionate about leveraging"} <span className="font-bold text-[#f26e1d]">full-stack development</span> and <span className="font-bold text-[#f26e1d]">machine learning</span> to create <span className="font-bold text-[#f26e1d]">innovative solutions</span>.  
+                        As a <span className="font-bold text-[#f26e1d]">software engineer</span> and computer science student at <span className="font-bold text-[#f26e1d]">Cornell University</span> minoring in <span className="font-bold text-[#f26e1d]">AI</span>{", I'm passionate about leveraging"} <span className="font-bold text-[#f26e1d]">full-stack + mobile development</span> and <span className="font-bold text-[#f26e1d]">machine learning</span> to create beautiful user-focused systems and drive meaningful impact.  
                     </span>
                     <span className = " text-[#fffcf0] font-medium text-[5vw]">
                             {"When I'm not at my 💻, you can find me playing the 🎹 or 🎻, assembling Gunpla 🤖 models, or lifting 🏋🏻."}
@@ -55,10 +55,10 @@ export default function About2({scrollYProgress, isMobile}) {
                     </div>
                     
                     <div className = "w-1/2 flex flex-col h-full justify-center gap-y-6 xl:gap-y-12 mt-48 xl:mt-52 medium:2xl:mt-36 2xl:tall:mt-0">
-                        <span className = " text-[#fffcf0] font-medium text-[2.25vw] leading-[2.75rem] xl:leading-[4.5rem]">
-                        As a <span className="font-bold text-[#f26e1d]">software engineer</span> and computer science student at <span className="font-bold text-[#f26e1d]">Cornell University</span> specializing in <span className="font-bold text-[#f26e1d]">AI</span>{", I'm passionate about leveraging"} <span className="font-bold text-[#f26e1d]">full-stack development</span> and <span className="font-bold text-[#f26e1d]">machine learning</span> to create <span className="font-bold text-[#f26e1d]">innovative solutions</span>.  
+                        <span className = " text-[#fffcf0] font-medium text-[2vw] leading-[2.5rem] xl:leading-[4.25rem]">
+                        As a <span className="font-bold text-[#f26e1d]">software engineer</span> and computer science student at <span className="font-bold text-[#f26e1d]">Cornell University</span> minoring in <span className="font-bold text-[#f26e1d]">AI</span>{", I'm passionate about leveraging"} <span className="font-bold text-[#f26e1d]">full-stack + mobile development</span> and <span className="font-bold text-[#f26e1d]">machine learning</span> to create beautiful user-focused systems and drive meaningful impact.  
                         </span>
-                        <span className = " text-[#fffcf0] font-medium text-[2.25vw] leading-[2.75rem] xl:leading-[4.5rem]">
+                        <span className = " text-[#fffcf0] font-medium text-[2vw] leading-[2.5rem] xl:leading-[4.25rem]">
                             {"When I'm not at my 💻, you can find me playing the 🎹 or 🎻, assembling Gunpla 🤖 models, or lifting 🏋🏻."}
                         </span>
                     </div>
