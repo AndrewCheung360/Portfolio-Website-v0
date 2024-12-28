@@ -30,6 +30,35 @@ export default function ProjectsPage({isMobile}) {
                     PROJECTS
                 </span>
                 <div ref={scope} className="flex flex-col text-black w-full px-8">
+                    <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
+                        <div className="flex flex-row w-full justify-between items-center group-hover:text-[#fffcf0] group-hover:px-4 transition-all ease-out duration-300 " onClick={() => handleProjectClick("uplift")}>
+                            <span className="text-[5vw] font-semibold">
+                                Uplift
+                            </span>
+                            <span className="text-[3vw]">
+                                2024
+                            </span>
+                        </div>
+                        <div id="uplift" className="w-full bg-[#fffcf0] h-1 border-b-[3px] border-black">
+                            <AnimatePresence>
+                                {openProject == "uplift" && 
+                                <motion.div className="flex flex-col gap-y-4" initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}>
+                                    <span className="text-[3.25vw] font-semibold">
+                                        Uplift is a mobile app designed to improve the fitness experience of Cornell Students by providing essential information like gym hours and class schedules, and goal tracking. 
+                                    </span>
+                                    <span className="text-[3vw]">
+                                        Technologies: Kotlin, Jetpack Compose, Apollo, Dagger Hilt, Python, GraphQL, Firebase
+                                    </span>
+                                    <div className = "flex w-full flex-row justify-evenly items-center">
+                                    <Image src="/uplift.png" className = " h-[300px] w-[180px] border-2" width={1080} height={2400} alt="divvyai"/>
+                                    </div>
+                                    
+                                </motion.div>}
+                            </AnimatePresence>
+                        </div>
+                    </div>
                 <div className = "group pt-6 w-full flex flex-col gap-y-6 hover:cursor-pointer hover:bg-black transition-all ease-out duration-300">
                         <div className="flex flex-row w-full justify-between items-center group-hover:text-[#fffcf0] group-hover:px-4 transition-all ease-out duration-300 " onClick={() => handleProjectClick("divvyai")}>
                             <span className="text-[5vw] font-semibold">
